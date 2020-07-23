@@ -19,7 +19,7 @@ public class metod_task8 {
 
         //Если последние цифры от 2 до 4 включительно, исключение для 14
         if (2 <= x % 10 && x % 10 <= 4) {
-            if (x % 100 == 14) {
+            if (x % 100 == 14||x % 100 == 12) {
                 System.out.println(x + " рублей");
             } else {
                 System.out.println(x + " рубля");
