@@ -2,7 +2,7 @@
 
 import java.util.Random;
 
-public class metod_task10 {
+public class Metod_task10 {
     public static void main(String[] args) {
         Random rand = new Random();
         int x = 10 + rand.nextInt(5); //Генерация случайного целого числа от 10 до 15

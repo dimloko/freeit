@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class metod_task12 {
+public class Metod_task12 {
     public static void main(String[] args) {
         //Ввод числа, если ввод некорректный - в значение переменной запишется 0
         Scanner sc = new Scanner(System.in);

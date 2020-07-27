@@ -3,7 +3,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class metod_task13 {
+public class Metod_task13 {
     public static void main(String[] args) {
         Random rand = new Random();
         Scanner sc = new Scanner(System.in);
@@ -12,6 +12,10 @@ public class metod_task13 {
         //Ввод размерности массива
         System.out.println("Введите размер массива:");
         int n = sc.hasNextInt() ? sc.nextInt() : 10;
+        if(n<1){ //Проверка размерности массива
+            n=10;
+            System.out.println("Введён некорректный размер, установлен размер по-умолчанию n=10");
+        }
         int array[] = new int[n];
 
         //Генерация массива, его вывод и поиск максимального элемента

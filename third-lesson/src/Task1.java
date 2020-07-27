@@ -2,7 +2,7 @@
 Каждый день он увеличивал дневную норму на 10% нормы предыдущего дня.
 Какой суммарный путь пробежит спортсмен за 7 дней?*/
 
-public class task1 {
+public class Task1 {
     public static void main(String[] args) {
 
         double way = 10.0; //Суммарный путь, 10 - путь за первый день
@@ -10,7 +10,7 @@ public class task1 {
         int day = 0;
 
         //Подсчёт суммарного пути за 6 оставшихся дней
-        while (day < 6) {
+        while (day <= 6) {
             distance *= 1.1; //Увеличение расстояния за день на 10%
             way += distance; //увеличение суммарного пути
             day++;
@@ -18,6 +18,6 @@ public class task1 {
 
         //вывод резульатата
 
-        System.out.printf("Суммарный путь за %d дней %.3f км%n", day + 1, way);
+        System.out.printf("Суммарный путь за %d дней %.3f км%n", day, way);
     }
 }

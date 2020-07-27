@@ -1,6 +1,6 @@
 //Вычислить: 1+2+4+8+...+256
 
-public class task3 {
+public class Task3 {
     public static void main(String[] args) {
         int sum = 0; //Значение суммы членов ряда
 

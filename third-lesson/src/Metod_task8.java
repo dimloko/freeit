@@ -3,7 +3,7 @@
 
 import java.util.Random;
 
-public class metod_task8 {
+public class Metod_task8 {
     public static void main(String[] args) {
         Random rand = new Random();
         int x = rand.nextInt(100000); //100000 чтобы не залазить в отрицательные значения

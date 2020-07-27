@@ -3,7 +3,7 @@
 
 import java.util.Random;
 
-public class metod_task6 {
+public class Metod_task6 {
     public static void main(String[] args) {
 
         //Генерация псевдослучайного числа в диапазоне от -3000 до 3000

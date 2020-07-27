@@ -3,7 +3,7 @@
 
 import java.util.Random;
 
-public class metod_task11 {
+public class Metod_task11 {
     public static void main(String[] args) {
         Random rand = new Random();
         int x = rand.nextInt();

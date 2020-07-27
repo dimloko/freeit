@@ -1,6 +1,6 @@
 /*Напишите программу, определяющую сумму всех нечетных чисел от 1 до 99*/
 
-public class task7 {
+public class Task7 {
     public static void main(String[] args) {
 
         int sum = 0;

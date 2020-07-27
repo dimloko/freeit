@@ -2,7 +2,7 @@
 полностью закрыть круглой картонкой радиусом r.*/
 
 
-public class metod_task7 {
+public class Metod_task7 {
     public static void main(String[] args) {
 
         double a = 3.0, b = 4.0, r = 3.0; //Объявление и инициализация переменных

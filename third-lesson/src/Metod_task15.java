@@ -5,7 +5,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class metod_task15 {
+public class Metod_task15 {
     public static void main(String[] args) {
         Random rand = new Random();
         Scanner sc = new Scanner(System.in);
