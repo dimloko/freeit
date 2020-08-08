@@ -6,19 +6,20 @@ public class Tictactoe {
         int[][] array = {{2, 2, 2}, {2, 2, 2}, {2, 2, 2},}; //2 клетка свободна, 1 - крестик Х, 0 - нолик 0
         Scanner sc = new Scanner(System.in);
 
+        out(array); //Вывод игрового поля
         while (true) {
-            out(array); //Вывод игрового поля
             userInput(sc, array); //Ход игрока
             if (!stepAI(array, 0, 2)) {     //Сначала ищем 0 в количестве 2 шт.
                 if (!stepAI(array, 1, 2)) { //Если не находим, то ищем 1 в количестве 2 шт
                     stepAI(array, 1, 1);    //Если не находим, то ищем 1 в количестве 1 шт
                 }
             }
-            if (check(array)) { //Проверка поля на выйгрыш либо наличие своьодных клеток
+            if (check(array)) { //Проверка поля на выйгрыш либо наличие свободных клеток
                 out(array);
                 System.out.println("Игра окончена");
                 break;
             }
+            out(array);
         }
     }
 
@@ -50,18 +51,18 @@ public class Tictactoe {
             return;
         }
 
-        int i, j; //Строка и столбец для хода игрока
+        int row, column; //Строка и столбец для хода игрока
 
         while (true) {
 
             //Ввод номера строки
             System.out.println("Введите номер строки, в которой хотите поставить X");
             while (true) {
-                i = sc.hasNextInt() ? sc.nextInt() : 0;
-                if (i < 1 || i > 3) { //Проверка диапазона
+                row = sc.hasNextInt() ? sc.nextInt() : 0;
+                if (row < 1 || row > 3) { //Проверка диапазона
                     System.out.println("Введено некрректное значение, попробуйте ещё раз");
                 } else { //Если в диапазоне
-                    i--;
+                    row--;
                     break;
                 }
             }
@@ -69,18 +70,18 @@ public class Tictactoe {
             //Ввод номера столбца
             System.out.println("Введите номер столбца, в котором хотите поставить X");
             while (true) {
-                j = sc.hasNextInt() ? sc.nextInt() : 0;
-                if (j < 1 || j > 3) { //Проверка диапазона
+                column = sc.hasNextInt() ? sc.nextInt() : 0;
+                if (column < 1 || column > 3) { //Проверка диапазона
                     System.out.println("Введено некрректное значение, попробуйте ещё раз");
                 } else { //Если в диапазоне
-                    j--;
+                    column--;
                     break;
                 }
             }
 
             //Проверка клетки на занятость, 2 - клетка свободна
-            if (array[i][j] == 2) {
-                array[i][j] = 1;
+            if (array[row][column] == 2) {
+                array[row][column] = 1;
                 break;
             }
             System.out.println("Выбрана занятая клетка, попробуйте ещё раз");
@@ -90,7 +91,7 @@ public class Tictactoe {
     //Ход компьютера
     static boolean stepAI(int[][] array, int search, int quantity) {
         //search - что ищем, крестики(1) либо нолики(0)
-        //mode - в каком количестве ищем
+        //quantity - в каком количестве ищем
         int flag;
 
         //Проверка горизонтали
@@ -207,7 +208,7 @@ public class Tictactoe {
     static boolean check(int[][] array) {
         int flag2 = 0;
 
-        for (int[] ints : array) {
+        for (int[] ints : array) { //Проверка оставшихся клеток
             for (int j = 0; j < array.length; j++) {
                 if (ints[j] == 2) {
                     flag2++;
@@ -216,17 +217,37 @@ public class Tictactoe {
             }
         }
         for (int i = 0; i < array.length; i++) {
-            if (array[i][0] == array[i][1] && array[i][1] == array[i][2] && array[i][2] != 2) {
+            if (array[i][0] == array[i][1] && array[i][1] == array[i][2] && array[i][2] == 1) {
+                System.out.println("Победа!!!");
                 return true;
             }
-            if (array[0][i] == array[1][i] && array[1][i] == array[2][i] && array[2][i] != 2) {
+            if (array[i][0] == array[i][1] && array[i][1] == array[i][2] && array[i][2] == 0) {
+                System.out.println("Вы проиграли=(");
+                return true;
+            }
+            if (array[0][i] == array[1][i] && array[1][i] == array[2][i] && array[2][i] == 1) {
+                System.out.println("Победа!!!");
+                return true;
+            }
+            if (array[0][i] == array[1][i] && array[1][i] == array[2][i] && array[2][i] == 0) {
+                System.out.println("Вы проиграли=(");
                 return true;
             }
         }
-        if (array[0][0] == array[1][1] && array[1][1] == array[2][2] && array[2][2] != 2) {
+        if (array[0][0] == array[1][1] && array[1][1] == array[2][2] && array[2][2] == 1) {
+            System.out.println("Победа!!!");
             return true;
         }
-        if (array[0][2] == array[1][1] && array[1][1] == array[2][0] && array[2][0] != 2) {
+        if (array[0][0] == array[1][1] && array[1][1] == array[2][2] && array[2][2] == 0) {
+            System.out.println("Вы проиграли=(");
+            return true;
+        }
+        if (array[0][2] == array[1][1] && array[1][1] == array[2][0] && array[2][0] == 1) {
+            System.out.println("Победа!!!");
+            return true;
+        }
+        if (array[0][2] == array[1][1] && array[1][1] == array[2][0] && array[2][0] == 0) {
+            System.out.println("Вы проиграли=(");
             return true;
         }
         if (flag2 == 0) {
