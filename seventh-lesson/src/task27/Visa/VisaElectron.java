@@ -15,7 +15,12 @@ public class VisaElectron extends Visa {
     @Override
     public String toString() {
         return "VisaElectron{" +
-                "_3dSecure=" + _3dSecure + "\n" +
-                super.toString() + '}';
+                "_3dSecure=" + _3dSecure +
+                ", currencyType='" + currencyType + '\'' +
+                ", isActive=" + isActive +
+                ", number='" + number + '\'' +
+                ", cvv='" + cvv + '\'' +
+                ", userName='" + userName + '\'' +
+                '}';
     }
 }

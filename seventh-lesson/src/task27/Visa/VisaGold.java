@@ -16,6 +16,10 @@ public class VisaGold extends Visa {
         return "VisaGold{" +
                 "goldStatus=" + goldStatus +
                 ", currencyType='" + currencyType + '\'' +
-                "\n"+super.toString()+'}';
+                ", isActive=" + isActive +
+                ", number='" + number + '\'' +
+                ", cvv='" + cvv + '\'' +
+                ", userName='" + userName + '\'' +
+                '}';
     }
 }

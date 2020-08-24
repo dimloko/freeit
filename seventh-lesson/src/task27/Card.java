@@ -2,9 +2,9 @@ package task27;
 
 
 public abstract class Card {
-    String number;
-    String cvv;
-    String userName;
+    protected String number;
+    protected String cvv;
+    protected String userName;
 
     public abstract void activation();
 
@@ -36,12 +36,4 @@ public abstract class Card {
         this.userName = userName;
     }
 
-    @Override
-    public String toString() {
-        return "Card{" +
-                "number='" + number + '\'' +
-                ", cvv='" + cvv + '\'' +
-                ", userName='" + userName + '\'' +
-                '}';
-    }
 }

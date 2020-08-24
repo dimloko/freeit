@@ -34,14 +34,14 @@ public class CardRunner {
 //        debet.setCvv("864");
 //        System.out.println(debet.toString());
 
-        VisaGold vg = new VisaGold();
-        vg.setNumber("3697 8501 3633 1129");
-        vg.setCvv("137");
-        vg.setCurrencyType("EUR");
-        vg.setGoldStatus(true);
-        vg.activation();
-        vg.setUserName("Rich Man");
-        System.out.println(vg.toString());
+//        VisaGold vg = new VisaGold();
+//        vg.setNumber("3697 8501 3633 1129");
+//        vg.setCvv("137");
+//        vg.setCurrencyType("EUR");
+//        vg.setGoldStatus(true);
+//        vg.activation();
+//        vg.setUserName("Rich Man");
+//        System.out.println(vg.toString());
 
 
     }

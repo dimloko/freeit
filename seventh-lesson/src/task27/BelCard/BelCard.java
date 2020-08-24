@@ -4,9 +4,9 @@ import task27.Card;
 
 public class BelCard extends Card {
 
-    int balance;
+    protected int balance;
 
-    private boolean isActive;
+    protected boolean isActive;
 
     @Override
     public void activation() {
@@ -32,11 +32,4 @@ public class BelCard extends Card {
         return balance;
     }
 
-    @Override
-    public String toString() {
-        return "BelCard{" +
-                "balance=" + balance +
-                ", isActive=" + isActive +
-                "\n" + super.toString() + '}';
-    }
 }

@@ -4,9 +4,9 @@ import task27.Card;
 
 public class Visa extends Card {
 
-    String currencyType;
+    protected String currencyType;
 
-    private boolean isActive;
+    protected boolean isActive;
 
     @Override
     public void activation() {
@@ -33,11 +33,4 @@ public class Visa extends Card {
         this.currencyType = currencyType;
     }
 
-    @Override
-    public String toString() {
-        return "Visa{" +
-                "currencyType='" + currencyType + '\'' +
-                ", isActive=" + isActive +
-                "\n" + super.toString() + '}';
-    }
 }

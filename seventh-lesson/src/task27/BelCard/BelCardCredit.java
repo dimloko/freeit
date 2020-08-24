@@ -13,8 +13,12 @@ public class BelCardCredit extends BelCard {
 
     @Override
     public String toString() {
-        return "BelCardCredit{" + "\n" +
-                super.toString() +
+        return "BelCardCredit{" +
+                "balance=" + balance +
+                ", isActive=" + isActive +
+                ", number='" + number + '\'' +
+                ", cvv='" + cvv + '\'' +
+                ", userName='" + userName + '\'' +
                 '}';
     }
 }
