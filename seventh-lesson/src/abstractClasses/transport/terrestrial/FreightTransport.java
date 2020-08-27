@@ -1,8 +1,8 @@
-package abstractClasses.terrestrial;
+package abstractClasses.transport.terrestrial;
 
 public class FreightTransport extends Terrestrial {
 
-    int payLoad;
+    protected int payLoad;
 
     public int getPayLoad() {
         return payLoad;
@@ -14,7 +14,7 @@ public class FreightTransport extends Terrestrial {
 
     @Override
     public String toString() {
-        return "FreightTransport{" +
+        return "\n" + "FreightTransport{" +
                 "payLoad=" + payLoad +
                 ", wheels=" + wheels +
                 ", fuelConsumption=" + fuelConsumption +

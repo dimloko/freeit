@@ -1,6 +1,6 @@
-package abstractClasses.airtransport;
+package abstractClasses.transport.airtransport;
 
-import abstractClasses.Transport;
+import abstractClasses.transport.Transport;
 
 public class AirTransport extends Transport {
     protected int wingspan;

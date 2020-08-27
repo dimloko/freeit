@@ -1,8 +1,8 @@
-package abstractClasses.airtransport;
+package abstractClasses.transport.airtransport;
 
 public class PassengerTransport extends AirTransport {
-    int maxPassengers;
-    boolean businessClass;
+    protected int maxPassengers;
+    protected boolean businessClass;
 
     public int getMaxPassengers() {
         return maxPassengers;
@@ -22,7 +22,7 @@ public class PassengerTransport extends AirTransport {
 
     @Override
     public String toString() {
-        return "PassengerTransport{" +
+        return "\n" + "PassengerTransport{" +
                 "passengers=" + maxPassengers +
                 ", businessClass=" + businessClass +
                 ", wingspan=" + wingspan +

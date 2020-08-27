@@ -1,8 +1,8 @@
-package abstractClasses.terrestrial;
+package abstractClasses.transport.terrestrial;
 
 public class LightTransport extends Terrestrial {
-    String bodyType;
-    int maxPassengers;
+    protected String bodyType;
+    protected int maxPassengers;
 
     public String getBodyType() {
         return bodyType;
@@ -22,7 +22,7 @@ public class LightTransport extends Terrestrial {
 
     @Override
     public String toString() {
-        return "LightTransport{" +
+        return "\n" + "LightTransport{" +
                 "bodyType='" + bodyType + '\'' +
                 ", passengers=" + maxPassengers +
                 ", wheels=" + wheels +

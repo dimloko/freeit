@@ -1,8 +1,8 @@
-package abstractClasses.airtransport;
+package abstractClasses.transport.airtransport;
 
 public class MilitaryTransport extends AirTransport {
-    boolean bailoutSystem;
-    int rockets;
+    protected boolean bailoutSystem;
+    protected int rockets;
 
     public boolean isBailoutSystem() {
         return bailoutSystem;
@@ -22,7 +22,7 @@ public class MilitaryTransport extends AirTransport {
 
     @Override
     public String toString() {
-        return "MilitaryTransport{" +
+        return "\n" + "MilitaryTransport{" +
                 "bailoutSystem=" + bailoutSystem +
                 ", rockets=" + rockets +
                 ", wingspan=" + wingspan +

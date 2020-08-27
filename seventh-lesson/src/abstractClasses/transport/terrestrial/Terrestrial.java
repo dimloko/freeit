@@ -1,6 +1,6 @@
-package abstractClasses.terrestrial;
+package abstractClasses.transport.terrestrial;
 
-import abstractClasses.Transport;
+import abstractClasses.transport.Transport;
 
 public class Terrestrial extends Transport {
     protected int wheels;

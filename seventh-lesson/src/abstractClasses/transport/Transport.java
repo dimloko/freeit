@@ -1,4 +1,4 @@
-package abstractClasses;
+package abstractClasses.transport;
 
 public abstract class Transport {
     protected int power;
