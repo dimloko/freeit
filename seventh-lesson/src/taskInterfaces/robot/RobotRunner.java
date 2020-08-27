@@ -36,8 +36,6 @@ public class RobotRunner {
                 System.out.println("Most expensive robot - " + r3.getName() + "Cost: " + r3.getPrice());
             }
         }
-        /*System.out.println(r3.getPrice() + " " + r3.getName());
-        System.out.println(r2.getPrice() + " " + r2.getName());
-        System.out.println(r1.getPrice() + " " + r1.getName());*/
+
     }
 }

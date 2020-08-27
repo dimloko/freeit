@@ -30,13 +30,17 @@ public class SpaceX implements IStart {
 
     @Override
     public void start() {
-
+        System.out.println("SpaceX start");
     }
 
     private Random r = new Random();
     private String name;
 
     public SpaceX(String name) {
+        this.name = name;
+    }
+
+    public void setName(String name) {
         this.name = name;
     }
 }
