@@ -1,43 +1,43 @@
 package taskInterfaces.robot;
 
-import taskInterfaces.robot.hands.Hand;
-import taskInterfaces.robot.heads.Head;
-import taskInterfaces.robot.legs.Leg;
+import taskInterfaces.robot.hands.IHand;
+import taskInterfaces.robot.heads.IHead;
+import taskInterfaces.robot.legs.ILeg;
 
 public class Robot {
-    private Leg leg;
-    private Hand hand;
-    private Head head;
+    private ILeg leg;
+    private IHand hand;
+    private IHead head;
     private String name;
 
-    public Robot(Leg leg, Hand hand, Head head, String name) {
+    public Robot(ILeg leg, IHand hand, IHead head, String name) {
         this.leg = leg;
         this.hand = hand;
         this.head = head;
         this.name = name;
     }
 
-    public Leg getLeg() {
+    public ILeg getLeg() {
         return leg;
     }
 
-    public void setLeg(Leg leg) {
+    public void setLeg(ILeg leg) {
         this.leg = leg;
     }
 
-    public Hand getHand() {
+    public IHand getHand() {
         return hand;
     }
 
-    public void setHand(Hand hand) {
+    public void setHand(IHand hand) {
         this.hand = hand;
     }
 
-    public Head getHead() {
+    public IHead getHead() {
         return head;
     }
 
-    public void setHead(Head head) {
+    public void setHead(IHead head) {
         this.head = head;
     }
 
@@ -60,6 +60,6 @@ public class Robot {
     }
 
     public int getPrice() {
-        return this.hand.getPrice() + this.leg.getPrice() + this.head.getPrice();
+        return this.hand.getPRICE() + this.leg.getPRICE() + this.head.getPRICE();
     }
 }

@@ -1,39 +1,33 @@
 package taskInterfaces.robot;
 
-import taskInterfaces.robot.hands.Hand;
-import taskInterfaces.robot.heads.Head;
-import taskInterfaces.robot.legs.Leg;
+import taskInterfaces.robot.hands.ToshibaHand;
+import taskInterfaces.robot.heads.SamsungHead;
+import taskInterfaces.robot.heads.SonyHead;
+import taskInterfaces.robot.legs.SamsungLeg;
+import taskInterfaces.robot.legs.SonyLeg;
+import taskInterfaces.robot.legs.ToshibaLeg;
 
 public class RobotRunner {
     public static void main(String[] args) {
-        Robot r1 = new Robot(new Leg("Sony", 2000),
-                new Hand("Toshiba", 2630),
-                new Head("Samsung", 4890),
-                "Chappi");
-        Robot r2 = new Robot(new Leg("Toshiba", 999),
-                new Hand("Toshiba", 2630),
-                new Head("Sony", 5599),
-                "T-1000");
-        Robot r3 = new Robot(new Leg("Samsung", 1350),
-                new Hand("Sony", 3999),
-                new Head("Toshiba", 4500),
-                "Wall-e");
+        Robot robot1 = new Robot(new SonyLeg(), new ToshibaHand(), new SamsungHead(), "Chappi");
+        Robot robot2 = new Robot(new ToshibaLeg(), new ToshibaHand(), new SonyHead(), "T-1000");
+        Robot robot3 = new Robot(new SamsungLeg(), new ToshibaHand(), new SonyHead(), "Wall-e");
 
-        r1.actions();
-        r2.actions();
-        r3.actions();
+        robot1.actions();
+        robot2.actions();
+        robot3.actions();
 
-        if (r1.getPrice() > r2.getPrice()) {
-            if (r1.getPrice() > r3.getPrice()) {
-                System.out.println("Most expensive robot - " + r1.getName() + "Cost: " + r1.getPrice());
+        if (robot1.getPrice() > robot2.getPrice()) {
+            if (robot1.getPrice() > robot3.getPrice()) {
+                System.out.println("Most expensive robot - " + robot1.getName() + "\nCost: " + robot1.getPrice());
             } else {
-                System.out.println("Most expensive robot - " + r3.getName() + "Cost: " + r3.getPrice());
+                System.out.println("Most expensive robot - " + robot3.getName() + "\nCost: " + robot3.getPrice());
             }
         } else {
-            if (r2.getPrice() > r3.getPrice()) {
-                System.out.println("Most expensive robot - " + r2.getName() + "Cost: " + r2.getPrice());
+            if (robot2.getPrice() > robot3.getPrice()) {
+                System.out.println("Most expensive robot - " + robot2.getName() + "\nCost: " + robot2.getPrice());
             } else {
-                System.out.println("Most expensive robot - " + r3.getName() + "Cost: " + r3.getPrice());
+                System.out.println("Most expensive robot - " + robot3.getName() + "\nCost: " + robot3.getPrice());
             }
         }
 

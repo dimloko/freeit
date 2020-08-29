@@ -42,6 +42,7 @@ public class ATM {
     }
 
     public boolean getCash(int sum) {
+        System.out.println("*******\n Trying to get cash from ATM:" + sum);
         int tmpSum = sum;
         int sumW100; //сумма, за вычетом сотенных купюр
         int n20 = 0;
