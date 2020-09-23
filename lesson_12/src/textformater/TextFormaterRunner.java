@@ -28,7 +28,7 @@ public class TextFormaterRunner extends TextFormater {
                 continue;
             }
             if (3 <= numOfWords(str) && numOfWords(str) <= 5) {
-                writer.write(str + "\n");
+                writer.write(str.trim() + "\n");
             }
         }
         writer.close();
