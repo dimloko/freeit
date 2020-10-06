@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="devicesValidator.xsd" xmlns:w="devicesValidator.xsd">
+    <xsd:element name="devices" type="w:devices"/>
+    <xsd:complexType name="devices">
+        <xsd:sequence>
+            <xsd:element name="device" type="w:device" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="device">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="origin" type="xsd:string"/>
+            <xsd:element name="price" type="w:price"/>
+            <xsd:element name="type" type="w:type"/>
+            <xsd:element name="critical" type="xsd:boolean"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="price">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:float">
+                <xsd:attribute name="currency_type" default="BYN">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:enumeration value="BYN"/>
+                            <xsd:enumeration value="EUR"/>
+                            <xsd:enumeration value="USD"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="type">
+        <xsd:sequence>
+            <xsd:element name="peripheral" type="xsd:boolean"/>
+            <xsd:element name="power_usage" type="xsd:positiveInteger"/>
+            <xsd:element name="cooler_presence" type="xsd:boolean"/>
+            <xsd:element name="group_of_components">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="computer case"/>
+                        <xsd:enumeration value="device IO"/>
+                        <xsd:enumeration value="monitor"/>
+                        <xsd:enumeration value="memory"/>
+                        <xsd:enumeration value="CPU"/>
+                        <xsd:enumeration value="GPU"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="interface" maxOccurs="unbounded">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="USB"/>
+                        <xsd:enumeration value="LPT"/>
+                        <xsd:enumeration value="PCI"/>
+                        <xsd:enumeration value="sata"/>
+                        <xsd:enumeration value="M2"/>
+                        <xsd:enumeration value="socket"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

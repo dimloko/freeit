@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<w:devices xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="devicesValidator.xsd"
+           xmlns:w="devicesValidator.xsd">
+
+    <device>
+        <name>Palit GeForce 1660 TI</name>
+        <origin>China</origin>
+        <price currency_type="EUR">427.3</price>
+        <type>
+            <peripheral>true</peripheral>
+            <power_usage>78</power_usage>
+            <cooler_presence>true</cooler_presence>
+            <group_of_components>GPU</group_of_components>
+            <interface>PCI</interface>
+        </type>
+        <critical>true</critical>
+    </device>
+
+    <device>
+        <name>AMD Ryzen 3600</name>
+        <origin>China</origin>
+        <price currency_type="BYN">724.6</price>
+        <type>
+            <peripheral>false</peripheral>
+            <power_usage>86</power_usage>
+            <cooler_presence>true</cooler_presence>
+            <group_of_components>CPU</group_of_components>
+            <interface>socket</interface>
+        </type>
+        <critical>true</critical>
+    </device>
+
+</w:devices>
