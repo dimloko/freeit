@@ -12,36 +12,28 @@ public class Censor {
     //Считывание списка слов для цензуры из файла
     private void readBlackList(String blackListName) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(blackListName));
-        String tmp = reader.readLine();
-        while (tmp != null) {
-            blackList.add(tmp);
-            tmp = reader.readLine();
+        String tmpString = reader.readLine();
+        while (tmpString != null) {
+            blackList.add(tmpString);
+            tmpString = reader.readLine();
         }
         reader.close();
     }
 
     //Считывание текста
     private void readInputText(String inputTextName) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("./src/censorship/inputText.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader(inputTextName));
         StringBuilder str = new StringBuilder();
-        String tmp = reader.readLine();
-        while (tmp != null) {
-            str.append(tmp);
-            tmp = reader.readLine();
+        String tmpString = reader.readLine();
+        while (tmpString != null) {
+            str.append(tmpString);
+            tmpString = reader.readLine();
         }
         reader.close();
         StringTokenizer st = new StringTokenizer(str.toString(), ".?!\n", true);
         while (st.hasMoreTokens()) {
             inputText.add((st.nextToken() + st.nextToken()).trim());
         }
-    }
-
-    public List<String> getBlackList() {
-        return blackList;
-    }
-
-    public List<String> getInputText() {
-        return inputText;
     }
 
     //Метод для поиска недопустимых слов в тексте
