@@ -1,7 +1,6 @@
 package task36;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -14,27 +13,27 @@ public class ListFolder {
 
     }
 
-    static void list(File f, int level) {
+    static void list(File path, int level) {
         Pattern pat = Pattern.compile("\\\\[^\\\\]+$"); //регулярное выражение, чтобы оставлять только "хвост" пути
         Matcher mat;
 
         //Если переданный обект File - директория
-        if(f.isDirectory()){
+        if(path.isDirectory()){
             printTab(level); //Печать отступов
-            mat = pat.matcher(f.getPath());
+            mat = pat.matcher(path.getPath());
             while (mat.find()) {
                 System.out.println(mat.group()); //Печать хвоста пути
             }
 
-            for(File file : Objects.requireNonNull(f.listFiles())) { //По списку в данной папке с рекурсивным вызовом мметода list
+            for(File file : Objects.requireNonNull(path.listFiles())) { //По списку в данной папке с рекурсивным вызовом мметода list
                 list(new File(file.getPath()), level + 1);
             }
         }
 
         //Если переданный обект File - файл
-        if(f.isFile()){
+        if(path.isFile()){
             printTab(level);
-            mat = pat.matcher(f.getPath());
+            mat = pat.matcher(path.getPath());
             while (mat.find()) {
                 System.out.println(mat.group());
             }
